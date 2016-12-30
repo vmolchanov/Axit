@@ -1,4 +1,4 @@
-// form
+// start form
 var mainHeaderFormWrapper = $(".main-header-content .start-form");
 var mainHeaderForm = mainHeaderFormWrapper.find("form");
 var mainHeaderFormName = mainHeaderForm.find("input[name=name]");
@@ -9,38 +9,30 @@ var presentationSlider = $(".presentation-slider");
 var presSliderController = presentationSlider.find(".presentation-slider-control");
 var tabs = presSliderController.find(".tab");
 var slides = presentationSlider.find(".presentation-slider-content-item");
+// msg form
+var msgForm = $(".contact .msg-form");
+var msgFormName = msgForm.find("input[name=name]");
+var msgFormEmail = msgForm.find("input[name=email]");
+var msgFormSubject = msgForm.find("input[name=subject]");
+var msgFormMessage = msgForm.find("textarea");
 
 // 
-// form
+// start form
 // 
 mainHeaderFormName.focus();
 
 mainHeaderForm.submit(function(event) {
 	event.preventDefault();
-	if (!mainHeaderFormName.value     ||
-		!mainHeaderFormPassword.value ||
-		!mainHeaderFormEmail.value
-		) {
-		mainHeaderFormWrapper.toggleClass("form-error");
+
+	if (!mainHeaderFormName.val()     ||
+		!mainHeaderFormPassword.val() ||
+		!mainHeaderFormEmail.val()) {
+
+		mainHeaderFormWrapper.addClass("form-error");
+		setTimeout(function() {
+			mainHeaderFormWrapper.removeClass("form-error");
+		}, 600);
 	}
-});
-
-mainHeaderFormName.focus(function(event) {
-	event.preventDefault();
-	if (mainHeaderFormWrapper.hasClass("form-error"))
-		mainHeaderFormWrapper.removeClass("form-error");
-});
-
-mainHeaderFormEmail.focus(function(event) {
-	event.preventDefault();
-	if (mainHeaderFormWrapper.hasClass("form-error"))
-		mainHeaderFormWrapper.removeClass("form-error");
-});
-
-mainHeaderFormPassword.focus(function(event) {
-	event.preventDefault();
-	if (mainHeaderFormWrapper.hasClass("form-error"))
-		mainHeaderFormWrapper.removeClass("form-error");
 });
 
 // 
@@ -71,3 +63,37 @@ tabs.click(function(event) {
 		choosenSlide.addClass("active");
 	}
 });
+
+// 
+// msg form
+// 
+
+msgForm.submit(function(event) {
+	event.preventDefault();
+	
+	if (!msgFormName.val()) {
+		msgFormName.addClass("form-error");
+		setTimeout(function() {
+			msgFormName.removeClass("form-error");
+		}, 600);
+	}
+
+	if (!msgFormEmail.val()) {
+		msgFormEmail.addClass("form-error");
+		setTimeout(function() {
+			msgFormEmail.removeClass("form-error");
+		}, 600);
+	}
+
+	if (!msgFormMessage.val()) {
+		msgFormMessage.addClass("form-error");
+		setTimeout(function() {
+			msgFormMessage.removeClass("form-error");
+		}, 600);	
+	}
+
+	if (!msgFormSubject.val()) {
+		msgFormSubject.val("No subject");
+	}
+});
+

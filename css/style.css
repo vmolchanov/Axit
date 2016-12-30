@@ -244,7 +244,7 @@ body:last-child:not(:root:root) .start-form {
 	background-color: #faac73;
 }
 
-.form-error {
+.start-form.form-error {
 	-webkit-animation: shake 0.6s;
 	-o-animation: shake 0.6s;
 	animation: shake 0.6s;
@@ -1008,6 +1008,8 @@ body:last-child:not(:root:root) .start-form {
 }
 
 .msg-form input[type="submit"] {
+	outline: none;
+
 	width: 150px;
 	padding: 15px 0;
 	margin-left: auto;
@@ -1020,14 +1022,29 @@ body:last-child:not(:root:root) .start-form {
 	outline: none;
 	
 	display: block;
-	height: 173px;
+	height: 170px;
 	width: 520px;
-	padding: 0;
-	padding-top: 7px;
+	padding: 5px 5px;
 	margin: 0;
 	border: none;
 	border-bottom: 1px solid #d6d6d6;
 	resize: none;
+}
+
+/*
+Хак для Safary
+Неправильный расчет высота textarea
+*/
+body:last-child:not(:root:root) .msg-form textarea { 
+	height: 179px;
+}
+
+.msg-form textarea:focus {
+	outline: 2px solid #faac73;
+}
+
+.msg-form .form-error {
+	outline: 2px solid #ff0000;
 }
 
 /*=======  main-footer  =======*/

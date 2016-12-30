@@ -50,7 +50,7 @@
 					<div class="form-description">
 						Try Your <span class="orange-letter">free</span> Trial Today
 					</div>
-					<form action="POST">
+					<form method="POST">
 						<input type="text" name="name" placeholder="Name">
 						<input type="email" name="email" placeholder="Email">
 						<input type="password" name="password" placeholder="Password">
@@ -373,12 +373,12 @@
 		<div class="container">
 			<h2 class="contact-header">Contact us</h2>
 			<p class="contact-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-			<form action="POST" class="msg-form">
+			<form method="POST" class="msg-form">
 				<div class="wrapper clearfix">
 					<div class="to-left">
-						<input type="text" placeholder="Name">
-						<input type="email" placeholder="Email">
-						<input type="text" placeholder="Subject">
+						<input type="text" name="name" placeholder="Name">
+						<input type="email" name="email" placeholder="Email">
+						<input type="text" name="subject" placeholder="Subject">
 					</div>
 					<textarea name="Message" cols="30" rows="10" placeholder="Message" class="to-right"></textarea>
 				</div>
