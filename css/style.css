@@ -1,5 +1,4 @@
-.container {
-	width: 1129px;
+.container {width: 1129px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -66,8 +65,11 @@
 }
 
 .main-header-content {
-	background: #000 url("../img/header_bg.jpg") no-repeat center center;
 	position: relative;
+
+	background: #000 url("../img/header_bg.jpg") no-repeat center center;
+	-webkit-background-size: cover;
+	background-size: cover;
 }
 
 .main-header-content::before {
@@ -330,6 +332,11 @@ body:last-child:not(:root:root) .start-form {
 .presentation-slider-control {
 	margin-right: 50px;
 	margin-bottom: 100px;
+	visibility: hidden;
+}
+
+.presentation-slider-control.live {
+	visibility: visible;
 }
 
 .presentation-slider-control .tab {
@@ -360,8 +367,11 @@ body:last-child:not(:root:root) .start-form {
 }
 
 .presentation-slider-content-list {
-	list-style: none;
+	height: 335px;
 	margin-top: 0;
+
+	list-style: none;
+	overflow: auto;
 }
 
 .presentation-slider-content-item {
@@ -405,7 +415,8 @@ body:last-child:not(:root:root) .start-form {
 	background-color: #faac73;
 }
 
-.presentation-slider-content-item.nonactive {
+.presentation-slider-control.live +
+.presentation-slider-content-list .presentation-slider-content-item.nonactive {
 	display: none;
 }
 
@@ -900,6 +911,8 @@ body:last-child:not(:root:root) .start-form {
 	position: relative;
 
 	background: #000 url("../img/design_bg.jpg") no-repeat center center;
+	-webkit-background-size: cover;
+	background-size: cover;
 }
 
 .design::before {
@@ -1032,8 +1045,8 @@ body:last-child:not(:root:root) .start-form {
 }
 
 /*
-Хак для Safary
-Неправильный расчет высота textarea
+	Хак для Safary
+	Неправильный расчет высота textarea
 */
 body:last-child:not(:root:root) .msg-form textarea { 
 	height: 179px;

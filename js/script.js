@@ -16,6 +16,9 @@ var msgFormEmail = msgForm.find("input[name=email]");
 var msgFormSubject = msgForm.find("input[name=subject]");
 var msgFormMessage = msgForm.find("textarea");
 
+// initialization
+$(".presentation-slider-control").addClass("live");
+
 // 
 // start form
 // 
