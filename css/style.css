@@ -70,6 +70,7 @@
 	background: #000 url("../img/header_bg.jpg") no-repeat center center;
 	-webkit-background-size: cover;
 	background-size: cover;
+	background-attachment: fixed;
 }
 
 .main-header-content::before {

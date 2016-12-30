@@ -16,13 +16,26 @@ var msgFormEmail = msgForm.find("input[name=email]");
 var msgFormSubject = msgForm.find("input[name=subject]");
 var msgFormMessage = msgForm.find("textarea");
 
+// ==============================================
 // initialization
+// ==============================================
+
+// work of javascript features
 $(".presentation-slider-control").addClass("live");
 
-// 
-// start form
-// 
 mainHeaderFormName.focus();
+
+// smooth scroll to anchor
+$(".top-menu .menu-item a").click(function(event) {
+	var elementId = $(this).attr("href");
+	$("body").animate({
+		scrollTop: $(elementId).offset().top
+	}, 1000);
+});
+
+// ==============================================
+// start form
+// ==============================================
 
 mainHeaderForm.submit(function(event) {
 	event.preventDefault();
@@ -30,7 +43,7 @@ mainHeaderForm.submit(function(event) {
 	if (!mainHeaderFormName.val()     ||
 		!mainHeaderFormPassword.val() ||
 		!mainHeaderFormEmail.val()) {
-
+		
 		mainHeaderFormWrapper.addClass("form-error");
 		setTimeout(function() {
 			mainHeaderFormWrapper.removeClass("form-error");
@@ -38,9 +51,10 @@ mainHeaderForm.submit(function(event) {
 	}
 });
 
-// 
+// ==============================================
 // presentation slider
-// 
+// ==============================================
+
 tabs.click(function(event) {
 	event.preventDefault();
 
@@ -67,9 +81,9 @@ tabs.click(function(event) {
 	}
 });
 
-// 
+// ==============================================
 // msg form
-// 
+// ==============================================
 
 msgForm.submit(function(event) {
 	event.preventDefault();
@@ -99,4 +113,3 @@ msgForm.submit(function(event) {
 		msgFormSubject.val("No subject");
 	}
 });
-
