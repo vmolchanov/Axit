@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Axit</title>
 	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/style.min.css">
+	<!-- <link rel="stylesheet" href="css/style.min.css"> -->
+	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="libs/font_awesome/css/font-awesome.min.css">
 
 	<!-- Fonts -->
@@ -52,9 +54,9 @@
 						Try Your <span class="orange-letter">free</span> Trial Today
 					</div>
 					<form method="POST">
-						<input type="text" name="name" placeholder="Name">
-						<input type="email" name="email" placeholder="Email">
-						<input type="password" name="password" placeholder="Password">
+						<input type="text" name="name" placeholder="Name" required>
+						<input type="email" name="email" placeholder="Email" required>
+						<input type="password" name="password" placeholder="Password" required>
 						<input type="submit" value="Get Started">
 					</form>
 				</div>
@@ -317,8 +319,9 @@
 		<div class="container">
 			<h2 class="reviews-header">What our customers are saying</h2>
 			<p class="reviews-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
 			<ul class="comments-list">
-				<li class="comment">
+				<li id="review-1" class="comment active">
 					<p class="comment-content">
 						Lorem ipsum dolor sit amet, 
 						consectetur adipisicing elit. Doloribus 
@@ -331,7 +334,7 @@
 						<span class="profession">Manager</span>
 					</div>
 				</li>
-				<li class="comment">
+				<li id="review-2" class="comment nonactive">
 					<p class="comment-content">
 						Lorem ipsum dolor sit amet, 
 						consectetur adipisicing elit. Doloribus 
@@ -344,7 +347,7 @@
 						<span class="profession">Freelancer</span>
 					</div>
 				</li>
-				<li class="comment">
+				<li id="review-3" class="comment nonactive">
 					<p class="comment-content">
 						Lorem ipsum dolor sit amet, 
 						consectetur adipisicing elit. Doloribus 
@@ -358,6 +361,13 @@
 					</div>
 				</li>
 			</ul>
+
+			<div class="reviews-slider-control">
+				<a href="#review-1" class="active"></a>
+				<a href="#review-2" class="nonactive"></a>
+				<a href="#review-3" class="nonactive"></a>
+			</div>
+
 		</div>
 	</div>
 
@@ -433,7 +443,8 @@
 	</footer>
 
 	<script src="libs/jQuery/jquery-3.1.0.min.js"></script>
-	<script src="js/script.min.js"></script>
+	<!-- <script src="js/script.min.js"></script> -->
+	<script src="js/script.js"></script>
 
 </body>
 </html>
